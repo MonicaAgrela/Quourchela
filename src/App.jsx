@@ -1,16 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar";
 import HomePage from "./Pages/HomePage";
-import AllRecipesPage from "./Pages/AllRecipesPage";
+import CategoryRecipePage from "./Pages/CategoryRecipePage"
+import axios from "axios";
 
 function App() {
   return (
     <div>
-      <NavBar></NavBar>
-      <AllRecipesPage></AllRecipesPage>
+      {/* <HomePage></HomePage> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/categories" element={<CategoryRecipePage />} />
       </Routes>
     </div>
   );

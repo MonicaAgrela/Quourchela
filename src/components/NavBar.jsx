@@ -1,29 +1,34 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 
 function NavBar() {
 
+
+
   return (
     <div className="header">
-      <Link className="logo" to="/">Quourchela</Link>
-      <nav className="navBar">
-        <Link to="/">
-          Home
-        </Link>
-        <Link to="/">
-          Recipes
-        </Link>
-        <Link to="/">
-          Blog
-        </Link>
-        <Link to="/">
-          About
-        </Link>
-        <Link to="/">
-          Contact Us
-        </Link>
+      <img className="logo" src="/mainLogo.png" alt="logo-img" />
+      <nav className="navbar">
+        <ul>
+          <li>
+            <Link className="active">Home</Link>
+          </li>
+          <li>
+            <Link>Recipes</Link>
+          </li>
+          <li>
+            <Link>Blogs</Link>
+          </li>
+          <li>
+            <Link>About</Link>
+          </li>
+          <Link className="material-symbols-outlined">person</Link>
+          <button className="navBtn">Submit Recipe</button>
+        </ul>
       </nav>
+
+
     </div>
   );
 }
