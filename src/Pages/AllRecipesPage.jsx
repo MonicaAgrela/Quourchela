@@ -7,30 +7,31 @@ function AllRecipesPage() {
   const [type, setType] = useState("");
 
   // useEffect(() => {
-    
+
   // }, []);
   //console.log(recipies);
 
   useEffect(() => {
     if (type) {
-      axios.get(`http://localhost:5005/recipies?type=${type}`)
-      .then((response) => {
-        setRecipes(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      axios
+        .get(`http://localhost:5005/recipes?type=${type}`)
+        .then((response) => {
+          setRecipes(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
       axios
-      .get(`http://localhost:5005/recipies`)
-      .then((response) => {
-        setRecipes(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        .get(`http://localhost:5005/recipes`)
+        .then((response) => {
+          setRecipes(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-  }, [type])
+  }, [type]);
 
   return (
     <div>

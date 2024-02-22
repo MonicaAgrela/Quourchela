@@ -3,6 +3,9 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import HomePage from "./Pages/HomePage";
 import AllRecipesPage from "./Pages/AllRecipesPage";
+import CategoryRecipePage from "./Pages/CategoryRecipePage"
+import DetailsRecipePage from "./Pages/DetailsRecipePage"
+import AddNewRecipePage from "./Pages/AddNewRecipePage"
 
 function App() {
   return (
