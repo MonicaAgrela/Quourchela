@@ -1,19 +1,24 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import HomePage from "./Pages/HomePage";
 import AllRecipesPage from "./Pages/AllRecipesPage";
-import CategoryRecipePage from "./Pages/CategoryRecipePage"
-import DetailsRecipePage from "./Pages/DetailsRecipePage"
-import AddNewRecipePage from "./Pages/AddNewRecipePage"
+import CategoryRecipePage from "./Pages/CategoryRecipePage";
+import DetailsRecipePage from "./Pages/DetailsRecipePage.jsx";
+import AddNewRecipePage from "./Pages/AddNewRecipePage";
+import EditRecipePage from "./Pages/EditRecipePage.jsx";
 
 function App() {
   return (
     <div>
-      <NavBar></NavBar>
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/categories" element={<CategoryRecipePage />} />
         <Route path="/recipes" element={<AllRecipesPage />} />
+        <Route path="/recipes/:recipesId" element={<DetailsRecipePage />} />
+        <Route path="/new-recipe" element={<AddNewRecipePage />} />
+        <Route path="/recipes/:recipesId/edit" element={<EditRecipePage />} />
       </Routes>
     </div>
   );

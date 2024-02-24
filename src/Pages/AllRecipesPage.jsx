@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function AllRecipesPage() {
   const [recipes, setRecipes] = useState();
-  const [type, setType] = useState("");
+  const [type] = useState("");
 
   // useEffect(() => {
 
@@ -40,6 +40,7 @@ function AllRecipesPage() {
           {recipes.map((oneRecipe) => {
             return (
               <Link key={oneRecipe.id} to={`/recipes/${oneRecipe.id}`}>
+                <img src={oneRecipe.image} />
                 {oneRecipe.name}
               </Link>
             );
