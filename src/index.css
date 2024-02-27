@@ -4,5 +4,12 @@
 purpule color #373A6D
 black color #000000 */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* // Used font google */
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
   
