@@ -7,6 +7,7 @@ import CategoryRecipePage from "./Pages/CategoryRecipePage";
 import DetailsRecipePage from "./Pages/DetailsRecipePage.jsx";
 import AddNewRecipePage from "./Pages/AddNewRecipePage";
 import EditRecipePage from "./Pages/EditRecipePage.jsx";
+import AboutUsPage from "./Pages/AboutUsPage.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/recipes/:recipesId" element={<DetailsRecipePage />} />
         <Route path="/new-recipe" element={<AddNewRecipePage />} />
         <Route path="/recipes/:recipesId/edit" element={<EditRecipePage />} />
+        <Route path="/about" element={<AboutUsPage />} />
       </Routes>
     </div>
   );
