@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function DetailsRecipePage() {
   const [recipeDetails, setRecipeDetails] = useState();
   const { recipesId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (recipesId) {
@@ -19,6 +20,15 @@ function DetailsRecipePage() {
         });
     }
   }, [recipesId]);
+
+  function deleteProject() {
+    axios
+      .delete(`http://localhost:5005/recipes/${recipesId}`)
+      .then(() => {
+        navigate("/recipes");
+      })
+      .catch(() => {});
+  }
 
   if (!recipeDetails) {
     return <p>Loading...</p>;
@@ -36,6 +46,7 @@ function DetailsRecipePage() {
         <p>{recipeDetails.instructions}</p>
         <p>{recipeDetails.description}</p>
         <Link to={`/recipes/${recipesId}/edit`}>Edit the Recipe</Link>
+        <button onClick={deleteProject}>Delete</button>
       </div>
     </div>
   );

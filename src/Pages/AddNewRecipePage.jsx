@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 
@@ -13,6 +13,7 @@ function AddNewRecipePage() {
   const [description, setDescription] = useState("");
 
   const navigate = useNavigate();
+  const { recipesId } = useParams();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -120,6 +121,7 @@ function AddNewRecipePage() {
 
         <button type="submit">Add New Recipe</button>
       </form>
+      <Link to={`/recipes/${recipesId}/edit`}>Edit the Recipe</Link>
     </div>
   );
 }
