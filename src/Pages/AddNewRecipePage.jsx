@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
 
-function EditRecipePage() {
+function AddNewRecipePage() {
   const [type, setType] = useState("");
   const [name, setName] = useState("");
   const [cuisine, setCuisine] = useState("");
@@ -11,13 +11,13 @@ function EditRecipePage() {
   const [instructions, setInstructions] = useState("");
   const [description, setDescription] = useState("");
 
-  const { recipesId } = useParams();
   const navigate = useNavigate();
+  const { recipesId } = useParams();
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    let editedRecipe = {
+    const newRecipe = {
       type: type,
       name: name,
       cuisine: cuisine,
@@ -28,26 +28,14 @@ function EditRecipePage() {
     };
 
     axios
-      .put(`http://localhost:5005/recipes/${recipesId}`, editedRecipe)
+      .post(`http://localhost:5005/recipes`, newRecipe)
       .then(() => {
-        navigate(`/recipes`);
+        navigate("/recipes");
       })
-      .catch(() => {});
-  }
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5005/recipes/${recipesId}`)
-      .then((recipeFromApi) => {
-        setType(recipeFromApi.data.type);
-        setName(recipeFromApi.data.name);
-        setCuisine(recipeFromApi.data.cuisine);
-        setImage(recipeFromApi.data.image);
-        setIngredients(recipeFromApi.data.ingredients);
-        setInstructions(recipeFromApi.data.instructions);
-        setDescription(recipeFromApi.data.description);
+      .catch((err) => {
+        console.log(err);
       });
-  }, [recipesId]);
+  }
 
   return (
     <div>
@@ -60,7 +48,6 @@ function EditRecipePage() {
             onChange={(e) => {
               setType(e.target.value);
             }}
-            value={type}
           />
         </label>
 
@@ -72,7 +59,6 @@ function EditRecipePage() {
             onChange={(e) => {
               setName(e.target.value);
             }}
-            value={name}
           />
         </label>
 
@@ -84,7 +70,6 @@ function EditRecipePage() {
             onChange={(e) => {
               setCuisine(e.target.value);
             }}
-            value={cuisine}
           />
         </label>
 
@@ -96,7 +81,6 @@ function EditRecipePage() {
             onChange={(e) => {
               setImage(e.target.value);
             }}
-            value={image}
           />
         </label>
 
@@ -108,7 +92,6 @@ function EditRecipePage() {
             onChange={(e) => {
               setIngredients(e.target.value);
             }}
-            value={ingredients}
           ></textarea>
         </label>
 
@@ -120,7 +103,6 @@ function EditRecipePage() {
             onChange={(e) => {
               setInstructions(e.target.value);
             }}
-            value={instructions}
           ></textarea>
         </label>
 
@@ -132,14 +114,14 @@ function EditRecipePage() {
             onChange={(e) => {
               setDescription(e.target.value);
             }}
-            value={description}
           ></textarea>
         </label>
 
-        <button type="submit">Edit</button>
+        <button type="submit">Add New Recipe</button>
       </form>
+      <Link to={`/recipes/${recipesId}/edit`}>Edit the Recipe</Link>
     </div>
   );
 }
 
-export default EditRecipePage;
+export default AddNewRecipePage;

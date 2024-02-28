@@ -23,11 +23,11 @@ function Footer() {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span className="ml-3 text-xl">Quourchila</span>
+            <span className="ml-3 text-xl">Quourchela</span>
           </a>
           <p className="mt-2 text-sm text-gray-500">
-            Quourchila: Your go-to destination for flavorful and nutritious
-            quinoa recipes. Explore a variety of dishes from traditional to
+            Quourchela: Your go-to destination for flavorful and nutritious
+           recipes. Explore a variety of dishes from traditional to
             creative fusion, perfect for every culinary enthusiast.
           </p>
         </div>

@@ -1,46 +1,51 @@
-import React from 'react'
-import "../App.css";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 function AllRecipesPage() {
+  const [recipes, setRecipes] = useState();
+  const [type] = useState("");
+
+
+
+  useEffect(() => {
+    if (type) {
+      axios
+        .get(`http://localhost:5005/recipes?type=${type}`)
+        .then((response) => {
+          setRecipes(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      axios
+        .get(`http://localhost:5005/recipes`)
+        .then((response) => {
+          setRecipes(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [type]);
+
   return (
-    <div className="container">
-      <div className="recipe-div">
-        <img src="https://www.plantbasedcooking.com/wp-content/uploads/2021/09/Moroccan-Couscous-Salad-3.jpg" />
-        <h1>Dish Name</h1>
-      </div>
-
-      <div className="recipe-div">
-        <img src="https://www.plantbasedcooking.com/wp-content/uploads/2021/09/Moroccan-Couscous-Salad-3.jpg" />
-        <h1>Dish Name</h1>
-      </div>
-
-      <div className="recipe-div">
-        <img src="https://www.plantbasedcooking.com/wp-content/uploads/2021/09/Moroccan-Couscous-Salad-3.jpg" />
-        <h1>Dish Name</h1>
-      </div>
-
-      <div className="recipe-div">
-        <img src="https://www.plantbasedcooking.com/wp-content/uploads/2021/09/Moroccan-Couscous-Salad-3.jpg" />
-        <h1>Dish Name</h1>
-      </div>
-
-      <div className="recipe-div">
-        <img src="https://www.plantbasedcooking.com/wp-content/uploads/2021/09/Moroccan-Couscous-Salad-3.jpg" />
-        <h1>Dish Name</h1>
-      </div>
-
-      <div className="recipe-div">
-        <img src="https://www.plantbasedcooking.com/wp-content/uploads/2021/09/Moroccan-Couscous-Salad-3.jpg" />
-        <h1>Dish Name</h1>
-      </div>
-
-      <div className="recipe-div">
-        <img src="https://www.plantbasedcooking.com/wp-content/uploads/2021/09/Moroccan-Couscous-Salad-3.jpg" />
-        <h1>Dish Name</h1>
-      </div>
+    <div>
+      {recipes && (
+        <>
+          {recipes.map((oneRecipe) => {
+            return (
+              <Link key={oneRecipe.id} to={`/recipes/${oneRecipe.id}`}>
+                <img src={oneRecipe.image} />
+                {oneRecipe.name}
+              </Link>
+            );
+          })}
+        </>
+      )}
     </div>
   );
 }
 
-export default AllRecipesPage
+export default AllRecipesPage;

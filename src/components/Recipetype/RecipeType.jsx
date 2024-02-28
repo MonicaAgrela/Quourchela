@@ -16,7 +16,7 @@ function RecipeType() {
               placeholder="Search for Recipes"
               className="border border-gray-300 rounded px-3 py-2 w-64"
             />
-            <select
+            {/* <select
               name="sort"
               id="sort"
               className="border border-gray-300 rounded px-3 py-2"
@@ -24,7 +24,7 @@ function RecipeType() {
               <option value="newest">Sort by: Newest</option>
               <option value="oldest">Sort by: Oldest</option>
               <option value="popular">Sort by: Popular</option>
-            </select>
+            </select> */}
           </div>
         </div>
         <div className="flex">

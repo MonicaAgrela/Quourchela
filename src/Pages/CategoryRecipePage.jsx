@@ -1,50 +1,75 @@
-// import { Link, useParams, useNavigate } from "react-router-dom";
-// import axios from "axios";
-// import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-// function CategoryRecipePage() {
-//   const [recipe, setRecipe] = useState("");
+function CategoryRecipePage() {
+  const [recipes, setRecipes] = useState();
+  const [type, setType] = useState("");
 
-//   useEffect(() => {
-//     axios.get(`http://localhost:5005/recipes`).then((recipeApi) => {
-//       setRecipe(recipeApi.data);
-//     });
-//     .catch((err)=>{
-//      console.log(err)
-//     })
-//   }, []);
+  useEffect(() => {
+    if (type) {
+      axios
+        .get(`http://localhost:5005/recipes?type=${type}`)
+        .then((response) => {
+          setRecipes(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [type]);
 
-//   return (
-//     <div>
-//         {recipes &&(
-//             <>
-//                 {recipes.map((oneRecipe)=>{
-//                     return (
-//      <div className="containerCategory">
-//        <div className="type">
-//          <Link>Fish{oneRecipe.name}</Link>
-//        </div>
-//        <div className="type">
-//          <Link>Meat</Link>
-//        </div>
-//        <div className="type">
-//          <Link>Pasta</Link>
-//        </div>
-//        <div className="type">
-//          <Link>Vegetables</Link>
-//        </div>
-//        <div className="type">
-//          <Link>Pizza</Link>
-//        </div>
-//      </div>
-//    );
-//                 })}
-//             </>
-//         )
-//         }
-//     </div>
-// )
-  
-// }
+  return (
+    <div>
+      <div className="containerCategory"></div>
+      <div>
+        <button
+          onClick={() => {
+            setType("meat");
+          }}
+        >
+          Meat
+        </button>
+        <button
+          onClick={() => {
+            setType("fish");
+          }}
+        >
+          Fish
+        </button>
+        <button
+          onClick={() => {
+            setType("vegetables");
+          }}
+        >
+          Vegetables
+        </button>
+        <button
+          onClick={() => {
+            setType("pasta");
+          }}
+        >
+          Pasta
+        </button>
+        <button
+          onClick={() => {
+            setType("pizza");
+          }}
+        >
+          Pizza
+        </button>
+        {recipes &&
+          recipes.map((recipes) => (
+            <div key={recipes.id}>
+              {recipes.name}
 
-// export default CategoryRecipePage;
+              <Link to={`/recipes/${recipes.id}`}>
+                <button>See Recipe</button>
+              </Link>
+            </div>
+          ))}
+      </div>
+    </div>
+  );
+}
+export default CategoryRecipePage;
