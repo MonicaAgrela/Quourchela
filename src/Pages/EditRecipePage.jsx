@@ -50,93 +50,85 @@ function EditRecipePage() {
   }, [recipesId]);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className="mx-auto max-w-lg mt-8">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <label className="block">
           Type
           <input
             name="type"
             type="text"
-            onChange={(e) => {
-              setType(e.target.value);
-            }}
+            onChange={(e) => setType(e.target.value)}
             value={type}
+            className="form-input mt-1 block w-full border border-gray-300 rounded-md"
           />
         </label>
 
-        <label>
+        <label className="block">
           Name
           <input
             name="name"
             type="text"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
+            onChange={(e) => setName(e.target.value)}
             value={name}
+            className="form-input mt-1 block w-full border border-gray-300 rounded-md"
           />
         </label>
 
-        <label>
-          Cuisinie
+        <label className="block">
+          Cuisine
           <input
             name="cuisine"
             type="text"
-            onChange={(e) => {
-              setCuisine(e.target.value);
-            }}
+            onChange={(e) => setCuisine(e.target.value)}
             value={cuisine}
+            className="form-input mt-1 block w-full border border-gray-300 rounded-md"
           />
         </label>
 
-        <label>
+        <label className="block">
           Image
           <input
             name="image"
             type="text"
-            onChange={(e) => {
-              setImage(e.target.value);
-            }}
+            onChange={(e) => setImage(e.target.value)}
             value={image}
+            className="form-input mt-1 block w-full border border-gray-300 rounded-md"
           />
         </label>
 
-        <label>
+        <label className="block">
           Ingredients
           <textarea
             name="ingredients"
-            type="text"
-            onChange={(e) => {
-              setIngredients(e.target.value);
-            }}
+            onChange={(e) => setIngredients(e.target.value)}
             value={ingredients}
+            className="form-textarea mt-1 block w-full border border-gray-300 rounded-md"
           ></textarea>
         </label>
 
-        <label>
+        <label className="block">
           Instructions
           <textarea
             name="instructions"
-            type="text"
-            onChange={(e) => {
-              setInstructions(e.target.value);
-            }}
+            onChange={(e) => setInstructions(e.target.value)}
             value={instructions}
+            className="form-textarea mt-1 block w-full border border-gray-300 rounded-md"
           ></textarea>
         </label>
 
-        <label>
+        <label className="block">
           Description
           <textarea
             name="description"
-            type="text"
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
+            onChange={(e) => setDescription(e.target.value)}
             value={description}
+            className="form-textarea mt-1 block w-full border border-gray-300 rounded-md"
           ></textarea>
         </label>
 
-        <button type="submit">Edit</button>
+        <button type="submit" className="btn bg-primary text-white py-2 px-4 rounded-md">
+          Edit
+        </button>
       </form>
     </div>
   );

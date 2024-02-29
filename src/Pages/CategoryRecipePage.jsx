@@ -20,8 +20,7 @@ function CategoryRecipePage() {
   }, [type]);
 
   return (
-    <div>
-      <div className="containerCategory"></div>
+    <div className="ButtonDiv">
       <div>
         <button
           onClick={() => {
@@ -30,6 +29,7 @@ function CategoryRecipePage() {
         >
           Meat
         </button>
+
         <button
           onClick={() => {
             setType("fish");
@@ -37,6 +37,7 @@ function CategoryRecipePage() {
         >
           Fish
         </button>
+
         <button
           onClick={() => {
             setType("vegetables");
@@ -44,6 +45,7 @@ function CategoryRecipePage() {
         >
           Vegetables
         </button>
+
         <button
           onClick={() => {
             setType("pasta");
@@ -51,6 +53,7 @@ function CategoryRecipePage() {
         >
           Pasta
         </button>
+
         <button
           onClick={() => {
             setType("pizza");
@@ -58,17 +61,18 @@ function CategoryRecipePage() {
         >
           Pizza
         </button>
-        {recipes &&
-          recipes.map((recipes) => (
-            <div key={recipes.id}>
-              {recipes.name}
-
-              <Link to={`/recipes/${recipes.id}`}>
-                <button>See Recipe</button>
-              </Link>
-            </div>
-          ))}
       </div>
+      {recipes &&
+        recipes.map((recipes) => (
+          <div key={recipes.id}>
+            {recipes.name}
+            <img src={recipes.image} alt="" />
+
+            <Link to={`/recipes/${recipes.id}`}>
+              <button>See Recipe</button>
+            </Link>
+          </div>
+        ))}
     </div>
   );
 }

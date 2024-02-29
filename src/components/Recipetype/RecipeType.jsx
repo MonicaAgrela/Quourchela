@@ -97,9 +97,9 @@ function RecipeType() {
                 </h2>
               </div>
             </div>
-            <button className="bg-white rounded-lg px-4 py-3 mt-8 shadow-lg">
+            {/* <button className="bg-white rounded-lg px-4 py-3 mt-8 shadow-lg">
               <span className="text-gray-800 font-medium">Find More</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
