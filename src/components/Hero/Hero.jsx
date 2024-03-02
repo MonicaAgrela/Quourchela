@@ -28,7 +28,7 @@ function Hero() {
                 <span className="text-secondary font-sofia text-5xl">
                   Delicious
                 </span>
-                {""} and Fast Recipes!
+                {""} and Diversified Recipes!
               </h1>
               <p data-aos="fade-up" data-aos-delay="300" className="lg:pr-64">
                 A Recipe is Soulless. The essence of Recipe must Come from

@@ -54,7 +54,11 @@ function DetailsRecipePage() {
           <h6 className="text-xl font-semibold  mb-4 text-black">
             Ingredients:
           </h6>
-          <p className="mb-4">{recipeDetails.ingredients}</p>
+          <ol>
+            {recipeDetails.ingredients.map((oneIngredient) => {
+              return <li key={oneIngredient}>{oneIngredient}</li>;
+            })}
+          </ol>
           <h6 className="text-xl font-semibold  mb-4 text-black">
             Instructions:
           </h6>
@@ -63,6 +67,14 @@ function DetailsRecipePage() {
             Description:
           </h6>
           <p className="mb-4">{recipeDetails.description}</p>
+          <h6 className="text-xl font-semibold  mb-4 text-black">
+            Recommended Restaurants:
+          </h6>
+          <ol>
+            {recipeDetails.restaurants.map((oneRestaurant) => {
+              return <li key={oneRestaurant}>{oneRestaurant}</li>;
+            })}
+          </ol>
           <div className="flex items-center space-x-4">
             <Link
               to={`/recipes/${recipesId}/edit`}
