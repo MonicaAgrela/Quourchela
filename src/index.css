@@ -1,6 +1,6 @@
-  /* font-family: "Sofia", sans-serif; */
+/* font-family: "Sofia", sans-serif; */
 
-  /* orange color #FF6B00
+/* orange color #FF6B00
 purpule color #373A6D
 black color #000000 */
 
@@ -9,8 +9,6 @@ black color #000000 */
 @tailwind utilities;
 
 /* // Used font google */
-@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
-  
-
+@import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
