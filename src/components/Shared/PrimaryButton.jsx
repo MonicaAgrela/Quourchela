@@ -6,7 +6,7 @@ function PrimaryButton() {
     <>
       <div className="flex items-center group">
         <button className="bg-primary h-[40px] text-white px-3 py-2 font-bold">
-          Explore Recipes
+          <a href="/recipes">Explore Recipes</a>
         </button>
         <BiSolidDish className="inline-block group-hover:!translate-x-2 duration-200 p-2 text-base h-[40px] w-[40px] bg-primaryDark text-white" />
       </div>

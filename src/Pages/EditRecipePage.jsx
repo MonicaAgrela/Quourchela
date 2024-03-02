@@ -52,7 +52,20 @@ function EditRecipePage() {
   return (
     <div className="mx-auto max-w-lg mt-8">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <label className="block">
+        <select
+          onChange={(e) => {
+            setType(e.target.value);
+          }}
+          defaultSelected={type}
+        >
+          <option value="pasta">Pasta</option>
+          <option value="fish">Fish</option>
+          <option value="meat">Meat</option>
+          <option value="pizza">Pizza</option>
+          <option value="vegetables">Vegetables</option>
+        </select>
+
+        {/* <label className="block">
           Type
           <input
             name="type"
@@ -61,7 +74,7 @@ function EditRecipePage() {
             value={type}
             className="form-input mt-1 block w-full border border-gray-300 rounded-md"
           />
-        </label>
+        </label> */}
 
         <label className="block">
           Name
@@ -126,7 +139,10 @@ function EditRecipePage() {
           ></textarea>
         </label>
 
-        <button type="submit" className="btn bg-primary text-white py-2 px-4 rounded-md">
+        <button
+          type="submit"
+          className="btn bg-primary text-white py-2 px-4 rounded-md"
+        >
           Edit
         </button>
       </form>

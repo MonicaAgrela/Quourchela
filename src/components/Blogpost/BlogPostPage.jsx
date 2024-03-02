@@ -28,8 +28,8 @@ function BlogPostPage() {
                     21 Feburary 2024
                   </span>
                   <h3 className="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                    <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
-                      Baked Tortellini with Sausage
+                    <a href="/blog-1">
+                      The Best Cooking Advice We Ever Received
                     </a>
                   </h3>
                   <div className="flex mt-4 gap-4 items-center">
@@ -105,8 +105,9 @@ function BlogPostPage() {
                     23 Feburary 2024
                   </span>
                   <h3 className="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                    <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
-                      99 rush-hour dinners ready in 30 minutes or less
+                    <a href="/blog-2">
+                      How to Organize Your Kitchen to Make It More Tidy and
+                      Functional
                     </a>
                   </h3>
                   <div className="flex mt-4 gap-4 items-center">
@@ -182,7 +183,7 @@ function BlogPostPage() {
                     26 Feburary 2024
                   </span>
                   <h3 className="mt-3 font-bold text-lg pb-4 border-b border-slate-300">
-                    <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
+                    <a href="/blog-3">
                       The most common mistakes when using and conserving olive
                       oil
                     </a>

@@ -2,7 +2,7 @@ import "aos/dist/aos.css";
 import React from "react";
 import Hero from "../components/Hero/Hero";
 import BlogPostPage from "../components/Blogpost/BlogPostPage";
-import RecipeType from "../components/Recipetype/RecipeType";
+import CategoryRecipePage from "./CategoryRecipePage";
 
 function HomePage() {
 
@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <RecipeType />
+      <CategoryRecipePage />
       <BlogPostPage />
     </>
   );

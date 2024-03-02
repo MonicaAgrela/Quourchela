@@ -7,24 +7,28 @@ function Navbar({ HandlePopup }) {
     {
       id: 1,
       name: "Home",
-     link: "/#",
+      link: "/#",
     },
     {
       id: 2,
-      name: "About",
-     link: "/#",
+      name: "Recipes",
+      link: "/recipes",
     },
     {
       id: 3,
       name: "Blog",
-     link: "/#",
+      link: "/blogs",
     },
     {
       id: 4,
       name: "Categories",
       link: "/categories",
     },
-    
+    {
+      id: 5,
+      name: "About",
+      link: "/about",
+    },
   ];
 
 
@@ -52,8 +56,12 @@ function Navbar({ HandlePopup }) {
                   </a>
                 </li>
               ))}
-
-              {/* Login button section */}
+              {/* Button  */}
+              <li>
+                <button className="flex justify-center items-center gap-2 bg-secondary text-xl h[40px] text-white px-5 py-2 hover:scale-105 duration-300">
+                  <a href="/new-recipe">+ New Recipe</a>
+                </button>
+              </li>
               <li>
                 <button
                   onClick={HandlePopup}

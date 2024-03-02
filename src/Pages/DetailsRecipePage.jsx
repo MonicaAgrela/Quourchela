@@ -48,6 +48,9 @@ function DetailsRecipePage() {
           <h2 className="text-xl font-semibold mb-4">
             {recipeDetails.cuisine}
           </h2>
+          <h3 className="text-xl font-semibold  mb-4 text-primary">
+            {recipeDetails.type.toUpperCase()}
+          </h3>
           <p className="mb-4">{recipeDetails.ingredients}</p>
           <p className="mb-4">{recipeDetails.instructions}</p>
           <p className="mb-4">{recipeDetails.description}</p>

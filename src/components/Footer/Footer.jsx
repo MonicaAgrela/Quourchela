@@ -32,7 +32,7 @@ function Footer() {
           </p>
         </div>
         <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
-          {[...Array(4)].map((_, index) => (
+          {[...Array(2)].map((_, index) => (
             <div key={index} className="lg:w-1/4 md:w-1/2 w-full px-4">
               <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
                 CATEGORIES

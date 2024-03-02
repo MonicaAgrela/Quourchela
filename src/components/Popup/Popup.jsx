@@ -33,6 +33,7 @@ function Popup({ showPopup, setShowPopup }) {
                   placeholder="Enter Your Password"
                   className="w-full rounded-md border border-gray-300 dark:border-gray-500 px-2 py-1 mb-4"
                 />
+<a href="/signup" className="mb- inline-block text-blue-500 hover:text-primary text-white font-bold py-2">Sign up</a>
 
                 {/* Login Button section */}
                 <div>
