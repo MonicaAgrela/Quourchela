@@ -6,16 +6,16 @@ import { FaSpaghettiMonsterFlying } from "react-icons/fa6";
 import { FaFish, FaPizzaSlice, FaCarrot } from "react-icons/fa";
 
 
-// ... (import statements remain unchanged)
 
 function CategoryRecipePage() {
   const [recipes, setRecipes] = useState([]);
-  const [type, setType] = useState("pasta"); // Default to pasta recipes
+  const [type, setType] = useState("pasta"); 
+  // Default to pasta recipes
 
   useEffect(() => {
     if (type) {
       axios
-        .get(`http://localhost:5005/recipes?type=${type}`)
+        .get(`${import.meta.env.VITE_API_URL}/recipes?type=${type}`)
         .then((response) => {
           setRecipes(response.data);
         })

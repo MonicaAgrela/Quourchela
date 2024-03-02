@@ -28,7 +28,7 @@ function EditRecipePage() {
     };
 
     axios
-      .put(`http://localhost:5005/recipes/${recipesId}`, editedRecipe)
+      .put(`${import.meta.env.VITE_API_URL}/${recipesId}`, editedRecipe)
       .then(() => {
         navigate(`/recipes`);
       })
@@ -37,7 +37,7 @@ function EditRecipePage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5005/recipes/${recipesId}`)
+      .get(`${import.meta.env.VITE_API_URL}/recipes/${recipesId}`)
       .then((recipeFromApi) => {
         setType(recipeFromApi.data.type);
         setName(recipeFromApi.data.name);

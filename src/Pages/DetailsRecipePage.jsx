@@ -10,7 +10,7 @@ function DetailsRecipePage() {
   useEffect(() => {
     if (recipesId) {
       axios
-        .get(`http://localhost:5005/recipes/${recipesId}`)
+        .get(`${import.meta.env.VITE_API_URL}/recipes/${recipesId}`)
         .then((oneRecipeDetails) => {
           setRecipeDetails(oneRecipeDetails.data);
         })
@@ -22,7 +22,7 @@ function DetailsRecipePage() {
 
   function deleteProject() {
     axios
-      .delete(`http://localhost:5005/recipes/${recipesId}`)
+      .delete(`${import.meta.env.VITE_API_URL}/recipes/${recipesId}`)
       .then(() => {
         navigate("/recipes");
       })

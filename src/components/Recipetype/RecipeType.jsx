@@ -9,7 +9,7 @@ function RecipeType() {
   useEffect(() => {
     if (query) {
       axios
-        .get(`http://localhost:5005/recipes?name_like=${query}`)
+        .get(`${import.meta.env.VITE_API_URL}/recipes?name_like=${query}`)
         .then((response) => {
           setRecipes(response.data);
         })

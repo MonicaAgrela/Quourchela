@@ -28,7 +28,7 @@ function AddNewRecipePage() {
     };
 
     axios
-      .post(`http://localhost:5005/recipes`, newRecipe)
+      .post(`${import.meta.env.VITE_API_URL}/recipes`, newRecipe)
       .then(() => {
         navigate("/recipes");
       })

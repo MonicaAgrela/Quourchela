@@ -9,7 +9,7 @@ function AllRecipesPage() {
   useEffect(() => {
     if (type) {
       axios
-        .get(`http://localhost:5005/recipes?type=${type}`)
+        .get(`${import.meta.env.VITE_API_URL}/recipes?type=${type}`)
         .then((response) => {
           setRecipes(response.data);
         })
@@ -18,7 +18,7 @@ function AllRecipesPage() {
         });
     } else {
       axios
-        .get(`http://localhost:5005/recipes`)
+        .get(`${import.meta.env.VITE_API_URL}/recipes`)
         .then((response) => {
           setRecipes(response.data);
         })
