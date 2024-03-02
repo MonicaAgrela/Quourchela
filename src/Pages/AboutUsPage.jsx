@@ -7,11 +7,7 @@ function AboutUsPage() {
         Welcome to Quourchela
       </h1>
 
-      <img
-        src="/mainLogo.png"
-        alt="Quourchela Logo"
-        className="mx-auto mb-8"
-      />
+      <img src="/mainLogo.png" alt="Quourchela Logo" className="mx-auto mb-8" />
 
       <div className="text-lg">
         <h2 className="text-2xl font-semibold mb-4">About Us</h2>
@@ -24,7 +20,7 @@ function AboutUsPage() {
         <p>
           We offer our users the ability to add, edit, and delete recipes as
           they desire. Additionally, we maintain a Blog section where users can
-          share food-related curiosities and stories for others to enjoy.
+          see food-related curiosities.
         </p>
       </div>
     </div>
