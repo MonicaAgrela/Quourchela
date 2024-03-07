@@ -27,8 +27,8 @@ Technologies Used
 Quourchela is built using the following technologies:
 
 Frontend: HTML, CSS, JavaScript, React
-Backend: Node.js, Express, MongoDB
-Additional Tools: Redux, Axios
+Backend: Mock api, MongoDB
+Additional Tools: Tailwind, Axios, 
 Support
 If you encounter any issues or have questions, feel free to reach out to our support team at support@quourchela.com.
 
