@@ -53,15 +53,14 @@ function AllRecipesPage() {
         {" "}
         <label>
           Search Recipe{" "}
-<input
-  id="search-bar"
-  type="text"
-  onChange={(e) => {
-    setQuery(e.target.value);
-  }}
-  value={query}
-  className="p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-/>
+    <input
+            id="search-bar"
+            type="text"
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+            value={query}
+          />
         </label>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
